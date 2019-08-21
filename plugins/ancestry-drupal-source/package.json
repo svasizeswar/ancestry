@@ -1,0 +1,16 @@
+{
+  "name": "ancestry-drupal-source",
+  "version": "1.0.0",
+  "description": "This plugin will fetch data from drupal and create nodes in gatsby",
+  "main": "gatsby-node.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Vasi",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^2.6.0",
+    "query-string": "^6.8.2"
+  }
+}
