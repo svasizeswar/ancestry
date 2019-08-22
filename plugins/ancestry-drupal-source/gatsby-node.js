@@ -6,42 +6,37 @@ exports.sourceNodes = async ({actions}) => {
 	const {createNode} = actions;
 	const result = await axios({
 		method: "POST",
-		url: "http://dev-ancestry.pantheonsite.io/graphql",
+		// url: "http://dev-ancestry.pantheonsite.io/graphql",
+		url: "http://devel.ravendevelopers.com/ancestry/graphql",
 		data: {
 			query: `
-											query BlogWithAuthorAndTags($nid: String) {
-						  node(nid: $nid) {
-							nid
-							title
-							body {
-							  value
-							  summary
-							  format
-							}
-							field_featured {
-							  value
-							}
-							field_blog_photo {
-							  fid
-							  alt
-							  title
-							  width
-							  height
-							}
-							field_blog_post_url {
-							  value
-							  format
-							}
-							field_blog_post_url {
-							  value
-							  format
-							}
-							field_category {
-							  tid
-							}
-						  }
-						}		
-                        `
+query {
+  nodeById(id: "90") {
+    entityId
+    entityCreated
+
+    title
+    status
+
+    ... on NodeBlog {
+      fieldBlogPostUrl
+      fieldBlogPostAuthor
+      fieldFeatured
+      fieldCategory {
+        targetId
+      }
+      fieldBlogPhoto {
+        targetId
+        alt
+        title
+        width
+        height
+        url
+      }
+    }
+  }
+}
+			`
 		}
 	});
 	for (const ancestrynode of result.data.data.node) {
