@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css');
+
+#home-jumbotron{
+	background-color:;
+	background-image: url('http://dev-ancestry.pantheonsite.io/sites/default/files/styles/jumbotron_one_column/public/sarah_booth.jpg?itok=q2PDEcM7');
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: center top;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://dev-ancestry.pantheonsite.io/sites/default/files/sarah_booth.jpg', sizingMethod='scale');
+	-ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://dev-ancestry.pantheonsite.io/sites/default/files/sarah_booth.jpg', sizingMethod='scale');
+}
