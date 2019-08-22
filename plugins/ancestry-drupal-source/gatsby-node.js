@@ -43,24 +43,6 @@ query {
 		}
 	});
 
-	//console.log(result.data);
-
-
-
-	/**
-	 *{ data:
-   { nodeById:
-      { entityId: '90',
-        entityCreated: '2019-07-01T02:13:52-0600',
-        title: 'Understanding your new ethnicity estimate',
-        status: true,
-        fieldBlogPostUrl: null,
-        fieldBlogPostAuthor: null,
-        fieldFeatured: true,
-        fieldCategory: [Array],
-        fieldBlogPhoto: [Object] } } }
-	 */
-
 	const ancestryNode = result.data.data.nodeById;
 
 	await createNode({
