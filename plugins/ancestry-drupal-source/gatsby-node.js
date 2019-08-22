@@ -11,7 +11,7 @@ exports.sourceNodes = async ({actions}) => {
                     url: "http://dev-ancestry.pantheonsite.io/graphql",
                     data: {
                         query: `
-                          query BlogWithAuthorAndTags($nid: String) {
+											query BlogWithAuthorAndTags($nid: String) {
 						  node(nid: $nid) {
 							nid
 							title
@@ -52,7 +52,7 @@ exports.sourceNodes = async ({actions}) => {
       id: ancestrynode.nid.toString(),
       title: ancestrynode.title,
 	  body:{value: ancestrynode.body.value,
-			summary: ancestrynode.body.summary, 
+			summary: ancestrynode.body.summary,
 			format: ancestrynode.body.format},
 	  field_featured:{value:ancestrynode.field_featured.value},
 	  field_category:{tid:ancestrynode.field_category.tid},
@@ -65,5 +65,5 @@ exports.sourceNodes = async ({actions}) => {
           .digest(`hex`),
       },
     });
-  }    
+  }
 };
