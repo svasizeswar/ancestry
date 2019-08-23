@@ -14,6 +14,67 @@
 	-ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://dev-ancestry.pantheonsite.io/sites/default/files/sarah_booth.jpg', sizingMethod='scale');
 }
 
-  .block-views {
+  .block-views, #ancestry-science-tech {
     margin-top: 5%;
+}
+
+#ancestry-science-tech,
+#ancestry-dna-customers{
+	background: transparent url('#{$image-base-url}/block_bg/IMG_0200_Joonku Song Copy@1x.jpg') no-repeat scroll top center;
+	@include background-size(cover);
+	@include flexbox();
+
+	@include mmsq-desktops(){
+		min-height: 800px;
+	}
+
+	@include mmsq-legacy-smartphones(){
+		min-height: 600px;
+	}
+
+	@include mmsq-ipads(){
+		min-height: 600px;
+	}
+
+	.block-content{
+		background-color: $ancestry-science-tech-bg;
+		border-top: 16px solid $ancestry-science-tech-bg-top2;
+		text-align: center;
+		position: relative;
+		padding: 44px 0;
+		@include flex(0 0 100%);
+		@include align-self(flex-end);
+
+		@include mmsq-legacy-smartphones(){
+			padding: 20px 0;
+		}
+
+		&::before{
+			background-color: $ancestry-science-tech-bg-top1;
+			position: absolute;
+			content: "";
+			left: 0;
+			right: 0;
+			top: -32px;
+			height: 16px;
+			z-index: 2;
+		}
+
+		h3{
+			font-size: 46px;
+			color: #fff;
+			font-weight: normal;
+			margin: 0;
+
+			@include mmsq-legacy-smartphones(){
+				@include fluid-type(320px, 812px, 30px, 30px);
+			}
+
+			@include mmsq-ipads(){
+				@include fluid-type(600px, 1366px, 35px, 35px);
+			}
+
+		}
+	}
+
 }

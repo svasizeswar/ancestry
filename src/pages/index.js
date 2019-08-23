@@ -2,6 +2,7 @@ import React from "react"
 import Header from "../components/header"
 import Hero from "../components/hero"
 import Latestblog from "../components/latestblog"
+import Science from "../components/science"
 import Helmet from "react-helmet";
 
 export default () => (
@@ -15,5 +16,6 @@ export default () => (
 		<Header />
 		<Hero />
 		<Latestblog/>
+		<Science/>
 	</div>
 )
