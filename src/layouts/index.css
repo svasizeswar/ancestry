@@ -13,3 +13,7 @@
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://dev-ancestry.pantheonsite.io/sites/default/files/sarah_booth.jpg', sizingMethod='scale');
 	-ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://dev-ancestry.pantheonsite.io/sites/default/files/sarah_booth.jpg', sizingMethod='scale');
 }
+
+  .block-views {
+    margin-top: 5%;
+}
