@@ -1,7 +1,41 @@
-import React from "react"
+import React, { Component } from "react"
 //import { useStaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
+import axios from "axios"
 
-export default () => (
+
+class FeaturedStory extends Component {
+	 state = {
+        title: " ",
+		name: " "
+    }
+	
+	 componentDidMount() {	 
+		
+		axios({
+		  url: "http://devel.ravendevelopers.com/ancestry/graphql",
+		  method: 'post',
+		  data: {
+			query: `
+					query {
+					  nodeById(id: "89") {
+						entityId
+						entityCreated
+						title
+						status
+					  }
+					}	`
+			}
+		}).then((result) => {
+ 		  	const blocktitle = result.data.data.nodeById.title;
+			this.setState({ title: blocktitle })
+		});
+	
+
+	 }
+
+ render() {
+        return (
 <div class="container views-home-featured-story-block-container block-views " id="home-featured-stories">
    <div class="view view-home-featured-story view-id-home_featured_story view-display-id-block view-article-wrapper view-dom-id-e3ee66df1d39f6396ad06479b404c440">
       <div class="view-content">
@@ -18,7 +52,7 @@ export default () => (
                <div class="encapsulated">
                   <img typeof="foaf:Image" src="http://dev-ancestry.pantheonsite.io/sites/default/files/styles/medium/public/jason_jones_1.jpg?itok=8z--j9_w" width="600" height="600" alt="" class="medium img-fluid"></img>
                   <div class="story-content">
-                     <h3><a href="/content/jason-jones-ancestral-voyage-trip-great-britain-and-ireland">Jason Jones, on an ancestral voyage trip to Great Britain and Ireland</a></h3>
+                     <h3><a href="/content/jason-jones-ancestral-voyage-trip-great-britain-and-ireland">{this.state.name}</a></h3>
                   </div>
                </div>
             </li>
@@ -29,6 +63,8 @@ export default () => (
          <a class="btn btn-outline-ancestry btn-blue btn-lg" href="#">View Our Full Story</a>			
       </footer>
    </div>
-</div>
-)
+</div> )
+ }
+}
 
+export default FeaturedStory
