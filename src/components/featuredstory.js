@@ -1,17 +1,34 @@
 import React, { Component } from "react"
 //import { useStaticQuery, graphql } from "gatsby"
-import { graphql } from "gatsby"
+
 import axios from "axios"
 
 
 class FeaturedStory extends Component {
 	 state = {
-        title: " ",
-		name: " "
+        title1: " ",
+		title2: " "
     }
-	
 	 componentDidMount() {	 
-		
+		axios({
+		  url: "http://devel.ravendevelopers.com/ancestry/graphql",
+		  method: 'post',
+		  data: {
+			query: `
+					query {
+					  nodeById(id: "88") {
+						entityId
+						entityCreated
+						title
+						status
+					  }
+					}	`
+			}
+		}).then((result) => {
+			console.log(result)
+ 		  	const blocktitle = result.data.data.nodeById.title;
+			this.setState({ title1: blocktitle })
+		});
 		axios({
 		  url: "http://devel.ravendevelopers.com/ancestry/graphql",
 		  method: 'post',
@@ -27,8 +44,9 @@ class FeaturedStory extends Component {
 					}	`
 			}
 		}).then((result) => {
+			console.log(result)
  		  	const blocktitle = result.data.data.nodeById.title;
-			this.setState({ title: blocktitle })
+			this.setState({ title2: blocktitle })
 		});
 	
 
@@ -44,7 +62,7 @@ class FeaturedStory extends Component {
                <div class="encapsulated">
                   <img typeof="foaf:Image" src="http://dev-ancestry.pantheonsite.io/sites/default/files/styles/medium/public/Sarah_Booth_1.jpg?itok=kqqzWfKU" width="600" height="600" alt="" class="medium img-fluid"></img>
                   <div class="story-content">
-                     <h3><a href="/content/sarah-booth-four-year-ancestry-member">Sarah Booth, four year ancestry member </a></h3>
+                     <h3><a href="/content/sarah-booth-four-year-ancestry-member">{this.state.title2}</a></h3>
                   </div>
                </div>
             </li>
@@ -52,7 +70,7 @@ class FeaturedStory extends Component {
                <div class="encapsulated">
                   <img typeof="foaf:Image" src="http://dev-ancestry.pantheonsite.io/sites/default/files/styles/medium/public/jason_jones_1.jpg?itok=8z--j9_w" width="600" height="600" alt="" class="medium img-fluid"></img>
                   <div class="story-content">
-                     <h3><a href="/content/jason-jones-ancestral-voyage-trip-great-britain-and-ireland">{this.state.name}</a></h3>
+                     <h3><a href="/content/jason-jones-ancestral-voyage-trip-great-britain-and-ireland">{this.state.title1}</a></h3>
                   </div>
                </div>
             </li>
