@@ -14,7 +14,7 @@
 	-ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://dev-ancestry.pantheonsite.io/sites/default/files/sarah_booth.jpg', sizingMethod='scale');
 }
 
-  .block-views, #ancestry-science-tech {
+  .block-views, .block-block {
     margin-top: 5%;
 }
 
@@ -78,3 +78,10 @@
 	}
 
 }
+
+#ancestry-dna-db .block-content {
+    border: 2px solid #64AEC9;
+    padding: 50px 40px;
+    border-radius: 35px;
+}
+

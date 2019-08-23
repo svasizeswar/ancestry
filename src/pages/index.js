@@ -3,6 +3,11 @@ import Header from "../components/header"
 import Hero from "../components/hero"
 import Latestblog from "../components/latestblog"
 import Science from "../components/science"
+import Dna from "../components/dna"
+import FeaturedStory from "../components/featuredstory"
+import News from "../components/news"
+import Footer from "../components/footer"
+import GlobalFamily from "../components/globalfamily"
 import Helmet from "react-helmet";
 
 export default () => (
@@ -17,5 +22,10 @@ export default () => (
 		<Hero />
 		<Latestblog/>
 		<Science/>
+		<Dna/>
+		<FeaturedStory/>
+		<News/>
+		<GlobalFamily/>
+		<Footer/>
 	</div>
 )
