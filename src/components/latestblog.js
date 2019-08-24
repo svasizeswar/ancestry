@@ -1,15 +1,7 @@
 import React, {Component} from "react"
-import lodash from "lodash"
 import axios from "axios";
-//import axios from "axios"
-//const axios = require('axios');
-//import { graphql } from "gatsby"
 
 class HomeFeaturedBlogArticles extends Component {
-
-	// state = {
-	// 	blogs: {}
-	// };
 
   constructor(props) {
     super(props);
@@ -62,8 +54,6 @@ fragment blogFragment on NodeBlog {
 	}
 
 	componentDidMount() {
-		//this.setState({blogs: HomeFeaturedBlogArticles.getBlogArticles()});
-
 		axios({
 			url: "http://devel.ravendevelopers.com/ancestry/graphql",
 			method: 'post',
@@ -107,6 +97,20 @@ fragment blogFragment on NodeBlog {
 
 	};
 
+	textTruncate = function (str, length, ending) {
+		if (length == null) {
+			length = 100;
+		}
+		if (ending == null) {
+			ending = '...';
+		}
+		if (str.length > length) {
+			return str.substring(0, length - ending.length) + ending;
+		} else {
+			return str;
+		}
+	};
+
 	render() {
 		const elements = [];
 
@@ -122,6 +126,8 @@ fragment blogFragment on NodeBlog {
 						value.featuredPhoto = 'http://dev-ancestry.pantheonsite.io/sites/default/files/styles/medium/public/adam-zvanovec-34686_0.jpg?itok=a7OWxa_Y';
 						break;
 				}
+				value.body.processed = value.body.processed.replace(/(<([^>]+)>)/ig,"");
+				value.body.processed = this.textTruncate(value.body.processed, 150);
 				elements.push(value);
 			}
 		}
@@ -142,7 +148,7 @@ fragment blogFragment on NodeBlog {
 													<h3><a href="/">{value.title}</a></h3>
 												</header>
 												<section>
-													{value.body.processed.replace(/(<([^>]+)>)/ig,"")}
+													<p>{value.body.processed}</p>
 												</section>
 												<footer>
 													<p className="meta-info">
