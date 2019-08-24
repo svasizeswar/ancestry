@@ -52,7 +52,7 @@ fragment blogFragment on NodeBlog {
 
 	};
 
-	textTruncate = function (str, length, ending) {
+	static textTruncate (str, length, ending) {
 		if (length == null) {
 			length = 100;
 		}
@@ -82,7 +82,7 @@ fragment blogFragment on NodeBlog {
 						break;
 				}
 				value.body.processed = value.body.processed.replace(/(<([^>]+)>)/ig,"");
-				value.body.processed = this.textTruncate(value.body.processed, 150);
+				value.body.processed = HomeFeaturedBlogArticles.textTruncate(value.body.processed, 150);
 				elements.push(value);
 			}
 		}
