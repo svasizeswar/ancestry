@@ -95,7 +95,7 @@ fragment blogFragment on NodeBlog {
 
 							{elements.map((value, index) => {
 								return (
-									<li className="views-row views-row-{index} views-row-odd views-row-first col-24 col-md-12 node-86 in-view" key={index}>
+									<li className="views-row views-row-1 views-row-odd views-row-first col-24 col-md-12 node-86 in-view" key={index}>
 										<article>
 											<img typeof="foaf:Image" src={value.featuredPhoto} width="600" height="600" alt="" className="medium img-fluid"></img>
 											<div className="blog-content">
