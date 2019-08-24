@@ -8,51 +8,6 @@ class HomeFeaturedBlogArticles extends Component {
     this.state = {blogs: {}};
   }
 
-	static async getBlogArticles() {
-		const axios = require('axios');
-		const result = await axios({
-			method: "POST",
-			url: "http://devel.ravendevelopers.com/ancestry/graphql",
-			data: {
-				query: `
-query {
-  nodeOne: nodeById(id: "86") {
-    ... blogFragment
-  }
-  nodeTwo: nodeById(id: "81") {
-    ... blogFragment
-  }
-}
-
-fragment blogFragment on NodeBlog {
-  title
-  body{
-    processed
-  }
-  fieldBlogPostUrl
-  fieldBlogPostAuthor
-  fieldFeatured
-  fieldCategory {
-    targetId
-  }
-  fieldBlogPhoto {
-    targetId
-    alt
-    title
-    width
-    height
-    url
-  }
-}
-			`
-			}
-		});
-
-		//console.log(result.data.data);
-
-		return result.data.data;
-	}
-
 	componentDidMount() {
 		axios({
 			url: "http://devel.ravendevelopers.com/ancestry/graphql",
