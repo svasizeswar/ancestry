@@ -2,86 +2,12 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css');
 
 #home-jumbotron{
-	background-image: url('http://dev-ancestry.pantheonsite.io/sites/default/files/styles/jumbotron_one_column/public/sarah_booth.jpg?itok=q2PDEcM7');
 	background-repeat: no-repeat;
 	background-attachment: scroll;
 	background-position: center top;
 	background-size: cover;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://dev-ancestry.pantheonsite.io/sites/default/files/sarah_booth.jpg', sizingMethod='scale');
-	-ms-filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://dev-ancestry.pantheonsite.io/sites/default/files/sarah_booth.jpg', sizingMethod='scale');
 }
 
-  .block-views, .block-block {
-    margin-top: 5%;
+.block-views, .block-block{
+	margin-top: 5%;
 }
-
-#ancestry-science-tech,
-#ancestry-dna-customers{
-	background: transparent url('#{$image-base-url}/block_bg/IMG_0200_Joonku Song Copy@1x.jpg') no-repeat scroll top center;
-	@include background-size(cover);
-	@include flexbox();
-
-	@include mmsq-desktops(){
-		min-height: 800px;
-	}
-
-	@include mmsq-legacy-smartphones(){
-		min-height: 600px;
-	}
-
-	@include mmsq-ipads(){
-		min-height: 600px;
-	}
-
-	.block-content{
-		background-color: $ancestry-science-tech-bg;
-		border-top: 16px solid $ancestry-science-tech-bg-top2;
-		text-align: center;
-		position: relative;
-		padding: 44px 0;
-		@include flex(0 0 100%);
-		@include align-self(flex-end);
-
-		@include mmsq-legacy-smartphones(){
-			padding: 20px 0;
-		}
-
-		&::before{
-			background-color: $ancestry-science-tech-bg-top1;
-			position: absolute;
-			content: "";
-			left: 0;
-			right: 0;
-			top: -32px;
-			height: 16px;
-			z-index: 2;
-		}
-
-		h3{
-			font-size: 46px;
-			color: #fff;
-			font-weight: normal;
-			margin: 0;
-
-			@include mmsq-legacy-smartphones(){
-				@include fluid-type(320px, 812px, 30px, 30px);
-			}
-
-			@include mmsq-ipads(){
-				@include fluid-type(600px, 1366px, 35px, 35px);
-			}
-
-		}
-	}
-
-}
-
-#ancestry-dna-db .block-content {
-    border: 2px solid #64AEC9;
-    padding: 50px 40px;
-    border-radius: 35px;
-}
-
