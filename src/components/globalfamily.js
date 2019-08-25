@@ -11,7 +11,7 @@ export default () => (
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br></br>
 					Integer sit amet leo eget purus consequat convallis. Duis
 				</p>
-				<p><a className="btn btn-outline-ancestry btn-green btn-lg" href="#">View All Open Jobs</a></p>
+				<p><a className="btn btn-outline-ancestry btn-green btn-lg" href="#" onClick={e => e.preventDefault()}>View All Open Jobs</a></p>
 			</div>
 		</div>
 	</div>

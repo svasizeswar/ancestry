@@ -28,19 +28,19 @@ export default () => (
 						<div className="menu-menu-footer-social-menu-container d-lg-flex" id="menu-menu-footer-social-menu-container">
 							<ul className="nav ml-auto">
 								<li className="first nav-item">
-									<a className="nav-link" href="https://facebook.com" rel="external nofollow" target="_blank"><i className="fab fa-facebook"></i></a>
+									<a className="nav-link" href="https://facebook.com"><i className="fab fa-facebook"></i></a>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" href="https://twitter.com" rel="external nofollow" target="_blank"><i className="fab fa-twitter"></i></a>
+									<a className="nav-link" href="https://twitter.com"><i className="fab fa-twitter"></i></a>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" href="https://youtube.com" rel="external nofollow" target="_blank"><i className="fab fa-youtube"></i></a>
+									<a className="nav-link" href="https://youtube.com"><i className="fab fa-youtube"></i></a>
 								</li>
 								<li className="nav-item">
-									<a className="nav-link" href="https://instagram.com" rel="external nofollow" target="_blank"><i className="fab fa-instagram"></i></a>
+									<a className="nav-link" href="https://instagram.com"><i className="fab fa-instagram"></i></a>
 								</li>
 								<li className="last nav-item">
-									<a className="nav-link" href="https://pinterest.com" rel="external nofollow" target="_blank"><i className="fab fa-pinterest"></i></a>
+									<a className="nav-link" href="https://pinterest.com"><i className="fab fa-pinterest"></i></a>
 								</li>
 							</ul>
 						</div>

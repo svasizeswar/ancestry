@@ -71,8 +71,7 @@ query {
 			backgroundImage: 'url(http://dev-ancestry.pantheonsite.io/sites/default/files/styles/jumbotron_one_column/public/sarah_booth.jpg?itok=q2PDEcM7)',
 		};
 
-		const element = this.state.hero.nodeById;
-		console.log(element);
+		let element = this.state.hero.nodeById;
 		let subhead = HomeJumbotron.textTruncate(element.body.processed.replace(/(<([^>]+)>)/ig,""), 250);
 
 		return(
