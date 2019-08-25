@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import axios from "axios";
+import axios from "axios"
 
 class HomeJumbotron extends Component {
 
@@ -72,6 +72,7 @@ query {
 		};
 
 		const element = this.state.hero.nodeById;
+		console.log(element);
 		let subhead = HomeJumbotron.textTruncate(element.body.processed.replace(/(<([^>]+)>)/ig,""), 250);
 
 		return(
@@ -84,10 +85,10 @@ query {
 						<div className="view-content row in-view">
 							<div className="views-row views-row-1 node-90">
 
-								<h2><a href="javascript:void(0)">{element.title}</a></h2>
+								<h2><a href="#" onClick={e => e.preventDefault()}>{element.title}</a></h2>
 								<p>{subhead}</p>
 
-								<a className="btn btn-outline-ancestry btn-lg" href="javascript:void(0)">Read This Post</a></div>
+								<a className="btn btn-outline-ancestry btn-lg" href="#" onClick={e => e.preventDefault()}>Read This Post</a></div>
 						</div>
 
 

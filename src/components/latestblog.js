@@ -107,8 +107,8 @@ fragment blogFragment on NodeBlog {
 												</section>
 												<footer>
 													<p className="meta-info">
-														<a className="comments" href="javascript:void(0)" rel="external">0 Comments</a>&nbsp;&nbsp;
-														<a className="read-more" href="javascript:void(0)" rel="external"><strong>Read More&nbsp;&nbsp;&gt;</strong></a>
+														<a className="comments" href="#" onClick={e => e.preventDefault()}>0 Comments</a>&nbsp;&nbsp;
+														<a className="read-more" href="#" onClick={e => e.preventDefault()}><strong>Read More&nbsp;&nbsp;&gt;</strong></a>
 													</p>
 												</footer>
 											</div>
