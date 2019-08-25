@@ -1,5 +1,4 @@
 import React from "react"
-//import { useStaticQuery, graphql } from "gatsby"
 
 export default () => (
 <div class="container-default block-5-container block-block " id="ancestry-science-tech">

@@ -20,12 +20,21 @@ export default () => (
 
 		<Header />
 		<Hero />
-		<Latestblog/>
-		<Science/>
-		<Dna/>
-		<FeaturedStory/>
-		<News/>
-		<GlobalFamily/>
+
+		<main id="main-content">
+
+			<section id="colophon">
+				<Latestblog/>
+				<Science/>
+				<Dna/>
+				<FeaturedStory/>
+				<News/>
+				<GlobalFamily/>
+			</section>
+
+		</main>
+
 		<Footer/>
+
 	</div>
 )
