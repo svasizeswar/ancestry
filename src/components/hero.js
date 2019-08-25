@@ -19,7 +19,6 @@ query {
   nodeById(id: "90") {
     entityId
     entityCreated
-
     title
     status
 
@@ -73,9 +72,7 @@ query {
 		};
 
 		const element = this.state.hero.nodeById;
-		let subhead = element.body.processed.replace(/(<([^>]+)>)/ig,"");
-
-		subhead = HomeJumbotron.textTruncate(subhead, 250);
+		let subhead = HomeJumbotron.textTruncate(element.body.processed.replace(/(<([^>]+)>)/ig,""), 250);
 
 		return(
 			<div className="jumbotron">
