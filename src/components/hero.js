@@ -6,50 +6,9 @@ class HomeJumbotron extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {hero: {}};
   }
 
 	componentDidMount() {
-		axios({
-			url: "http://devel.ravendevelopers.com/ancestry/graphql",
-			method: 'post',
-			data: {
-				query: `
-query {
-  nodeById(id: "90") {
-    entityId
-    entityCreated
-    title
-    status
-
-    ... on NodeBlog {
-      body{
-        processed
-      }
-      fieldBlogPostUrl
-      fieldBlogPostAuthor
-      fieldFeatured
-      fieldCategory {
-        targetId
-      }
-      fieldBlogPhoto {
-        targetId
-        alt
-        title
-        width
-        height
-        url
-      }
-    }
-  }
-}
-				`
-			}
-		}).then((result) => {
-			const data = result.data.data;
-			this.setState({hero: data});
-		});
-
 	};
 
 	static textTruncate (str, length, ending) {
@@ -71,8 +30,8 @@ query {
 			backgroundImage: 'url(http://dev-ancestry.pantheonsite.io/sites/default/files/styles/jumbotron_one_column/public/sarah_booth.jpg?itok=q2PDEcM7)',
 		};
 
-		let element = this.state.hero.nodeById;
-		let subhead = HomeJumbotron.textTruncate(element.body.processed.replace(/(<([^>]+)>)/ig,""), 250);
+		// let element = this.state.hero.nodeById;
+		// let subhead = HomeJumbotron.textTruncate(element.body.processed.replace(/(<([^>]+)>)/ig,""), 250);
 
 		return(
 			<div className="jumbotron">
@@ -83,10 +42,8 @@ query {
 
 						<div className="view-content row in-view">
 							<div className="views-row views-row-1 node-90">
-
-								<h2><a href="#" onClick={e => e.preventDefault()}>{element.title}</a></h2>
-								<p>{subhead}</p>
-
+								<h2><a href="#" onClick={e => e.preventDefault()}>Understanding your new ethnicity estimate</a></h2>
+								<p>We’re always looking for new ways to help support our customers on their journeys of personal discovery. Often that means updating our products and services to take advantage of the most advanced science and technology.</p>
 								<a className="btn btn-outline-ancestry btn-lg" href="#" onClick={e => e.preventDefault()}>Read This Post</a></div>
 						</div>
 

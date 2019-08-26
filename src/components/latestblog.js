@@ -35,6 +35,9 @@ fragment blogFragment on NodeBlog {
     targetId
   }
   fieldBlogPhoto {
+    thumb:derivative(style: LARGE){
+      url
+    }
     targetId
     alt
     title
