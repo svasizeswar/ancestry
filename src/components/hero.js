@@ -1,6 +1,6 @@
 import React, {Component} from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import axios from "axios"
+import axios from "axios";
+import { graphql } from "gatsby"
 
 class HomeJumbotron extends Component {
 
@@ -9,6 +9,7 @@ class HomeJumbotron extends Component {
   }
 
 	componentDidMount() {
+
 	};
 
 	static textTruncate (str, length, ending) {
@@ -26,6 +27,7 @@ class HomeJumbotron extends Component {
 	};
 
 	render() {
+
 		const divStyle = {
 			backgroundImage: 'url(http://dev-ancestry.pantheonsite.io/sites/default/files/styles/jumbotron_one_column/public/sarah_booth.jpg?itok=q2PDEcM7)',
 		};

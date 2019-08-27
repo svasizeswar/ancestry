@@ -7,21 +7,13 @@
 module.exports = {
 	/* Your site config here */
 	plugins: [
-		`ancestry-drupal-source`,
+		// `ancestry-drupal-source`
 		{
-			resolve: `gatsby-transformer-remark`,
+			resolve: 'gatsby-source-drupal',
 			options: {
-				// CommonMark mode (default: true)
-				commonmark: true,
-				// Footnotes mode (default: true)
-				footnotes: true,
-				// Pedantic mode (default: true)
-				pedantic: true,
-				// GitHub Flavored Markdown mode (default: true)
-				gfm: true,
-				// Plugins configs
-				plugins: [],
+				baseUrl: 'http://devel.ravendevelopers.com/ancestry/',
+				apiBase: 'jsonapi', // endpoint of Drupal server
 			},
-		},
+		}
 	]
 };

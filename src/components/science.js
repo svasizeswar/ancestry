@@ -1,14 +1,16 @@
 import React, {Component} from "react"
 import axios from "axios";
+import * as M from "../models/drupal"
 
 class HomeScienceBlock extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {blocks: {}};
+		this.state = {block_5: {}};
 	}
 
 	componentDidMount() {
+		// this.setState({block_6: M.getBlockScience()});
 		axios({
 			url: "http://devel.ravendevelopers.com/ancestry/graphql",
 			method: 'post',
@@ -31,12 +33,12 @@ fragment body on BlockContentBasic{
 			}
 		}).then((result) => {
 			const data = result.data.data;
-			this.setState({blocks: data});
+			this.setState({block_5: data});
 		});
 	}
 
 	render(){
-		let element = this.state.blocks;
+		let element = this.state.block_5;
 
 		let blockContent = element.blockContentById.body.value.replace(/(<([^>]+)>)/ig,"");
 

@@ -1,7 +1,7 @@
 const axios = require('axios');
 const crypto = require('crypto');
 
-exports.sourceNodes = async ({actions}) => {
+exports.sourceNodes = async ({actions, createNodeId, createContentDigest, getNode, getNodes, getNodesByType}) => {
 	const {createNode} = actions;
 	const result = await axios({
 		method: "POST",

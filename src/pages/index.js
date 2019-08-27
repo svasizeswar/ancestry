@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Header from "../components/header"
 import Hero from "../components/hero"
 import Latestblog from "../components/latestblog"
@@ -8,7 +9,7 @@ import FeaturedStory from "../components/featuredstory"
 import News from "../components/news"
 import Footer from "../components/footer"
 import GlobalFamily from "../components/globalfamily"
-import Helmet from "react-helmet";
+import Helmet from "react-helmet"
 
 export default () => (
 	<div id="wrap">
@@ -23,8 +24,8 @@ export default () => (
 
 			<section id="colophon">
 				<Latestblog/>
-				<Science/>
-				<Dna/>
+				{/*<Science/>*/}
+				{/*<Dna/>*/}
 				<FeaturedStory/>
 				<News/>
 				<GlobalFamily/>
