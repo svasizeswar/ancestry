@@ -16,7 +16,7 @@
     "gatsby": "^2.13.67",
     "gatsby-source-drupal": "^3.2.23",
     "gatsby-transformer-remark": "^2.6.19",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "node-inspect": "^1.11.6",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
