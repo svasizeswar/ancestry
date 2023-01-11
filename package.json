@@ -15,7 +15,7 @@
   "dependencies": {
     "gatsby": "^2.13.67",
     "gatsby-source-drupal": "^3.2.23",
-    "gatsby-transformer-remark": "^2.6.19",
+    "gatsby-transformer-remark": "^5.25.1",
     "lodash": "^4.17.15",
     "node-inspect": "^1.11.6",
     "react": "^16.9.0",
